@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Carousel</title>
+
+	<link rel="stylesheet" href="carousel.css">
+
+	<script src="jquery.js"></script>
+	<script src="carousel.js"></script>
+</head>
+<body>
+	<section class="carousel">
+		<header>
+			<h1>Test Header Content</h1>
+		</header>
+
+		<article class="slide">
+			<img src="http://placehold.it/2000x1500/CC0066/ffffff" alt="Placeholder!">
+			<div class="copy">
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam corrupti quod dolor commodi velit eos veritatis ducimus in repellendus minima itaque nesciunt fuga sit, impedit explicabo sint sapiente, ratione at.</p>
+			</div>
+		</article>
+
+		<article class="slide">
+			<img src="http://placehold.it/2000x1500/0066CC/ffffff" alt="Placeholder!">
+			<div class="copy">
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum esse, mollitia ratione error, ipsam, provident eveniet reprehenderit repellat qui suscipit modi laudantium vitae! Numquam quisquam, pariatur fuga id veniam saepe.</p>
+			</div>
+		</article>
+
+		<article class="slide">
+			<img src="http://placehold.it/2000x1500/6600CC/ffffff" alt="Placeholder!">
+			<div class="copy">
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non animi nostrum at molestias dicta vel quae, error mollitia aliquid, nesciunt distinctio expedita fuga tenetur ex vitae amet minima voluptatem veritatis.</p>
+			</div>
+		</article>
+	</section>
+
+	<script>
+		$(function() {
+			var carousel = new Carousel($('.carousel'));
+			
+			carousel.init();
+		});
+	</script>
+</body>
+</html>

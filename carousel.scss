@@ -1,0 +1,125 @@
+@import url(http://fonts.googleapis.com/css?family=Source+Code+Pro:300,500);
+
+// variables
+$black: #000;
+$white: #fff;
+
+// mixins
+@mixin box-shadow($top: 1px, $left: 1px, $blur: 3px, $color: rgba($black, .3)) {
+	box-shadow: $top $left $blur $color;
+}
+
+// extendable classes
+.font {
+	font-family: 'Source Code Pro';
+	font-weight: 300;
+}
+
+.font-bold {
+	font-family: 'Source Code Pro';
+	font-weight: 500;
+}
+
+// reset
+* {
+	margin: 0;
+	padding: 0;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+body {
+	position: relative;
+	font-size: 100%;
+}
+
+// styles!
+.carousel {
+	height: 100%;
+	width: 100%;
+	overflow: hidden;
+
+	header {
+		border-top: 8px solid rgba($black, .5);
+		position: absolute;
+		left: 0;
+		top: 0;
+		z-index: 1;
+		width: 100%;
+
+		h1 {
+			background: rgba($black, .5);
+			border-right: 1px solid rgba($black, .5);
+			border-bottom: 1px solid rgba($black, .5);
+			display: inline-block;
+			@extend .font;
+			color: $white;
+			font-size: 2rem;
+			padding: 1rem 2rem;
+		}
+	}
+
+	.slide-container {
+		.nav-arrow {
+			background: rgba($black, .5);
+			border-radius: 150px;
+			position: absolute;
+			cursor: pointer;
+			@extend .font-bold;
+			color: $white;
+			font-size: 4rem;
+			line-height: 100px;
+			text-align: center;
+			height: 100px;
+			width: 100px;
+			top: 50%;
+			transform: translateY(-50%);
+
+			&:first-of-type {
+				left: 10px;
+				transform: translateY(-50%) rotate(-180deg);
+
+				&:before {
+					content: "➡";
+					padding-left: 4px;
+				}
+			}
+
+			&:nth-of-type(2) {
+				right: 10px;
+
+				&:before {
+					content: '➡';
+					padding-left: 4px;
+				}
+			}
+		}
+	}
+
+	.slide {
+		float: left;
+		height: 100%;
+		width: 100%;
+		position: relative;
+
+		img {
+			display: block;
+			width: 100%;
+		}
+
+		.copy {
+			border-top: 1px solid rgba($black, .8);
+			border-left: 1px solid rgba($black, .8);
+			background: rgba($black, .5);
+			padding: 1rem;
+			@extend .font;
+			color: $white;
+			text-align: right;
+			position: absolute;
+			bottom: 0;
+			right: 0;
+			max-width: 80%;
+		}
+	}
+}
